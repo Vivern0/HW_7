@@ -12,6 +12,11 @@ sqlalchemy = "^2.0.28"
 faker = "^24.0.0"
 
 
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.8.0"
+flake8 = "^7.0.0"
+pylint = "^3.1.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

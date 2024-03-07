@@ -1,3 +1,7 @@
+'''
+This module contains the models for the database.
+The models are created using the SQLAlchemy ORM
+'''
 from sqlalchemy import String, ForeignKey, CheckConstraint
 from sqlalchemy.orm import declarative_base, Mapped
 from sqlalchemy.orm import mapped_column, relationship
@@ -7,6 +11,7 @@ Base = declarative_base()
 
 
 class Student(Base):
+    '''This class represents the students table in the database.'''
     __tablename__ = 'students'
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     full_name: Mapped[str] = mapped_column(String(100))
@@ -17,18 +22,21 @@ class Student(Base):
 
 
 class Group(Base):
+    '''This class represents the groups table in the database.'''
     __tablename__ = 'groups'
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     group_name: Mapped[str] = mapped_column(String(100))
 
 
 class Lecturer(Base):
+    '''This class represents the lecturers table in the database.'''
     __tablename__ = 'lecturers'
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     full_name: Mapped[str] = mapped_column(String(100))
 
 
 class Subject(Base):
+    '''This class represents the subjects table in the database.'''
     __tablename__ = 'subjects'
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     subject_name: Mapped[str] = mapped_column(String(100))
@@ -39,6 +47,7 @@ class Subject(Base):
 
 
 class Mark(Base):
+    '''This class represents the marks table in the database.'''
     __tablename__ = 'marks'
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     mark: Mapped[int] = mapped_column(
